@@ -5,6 +5,8 @@ import (
 	"sort"
 )
 
+// GetKthSmallestElementUsingSort ... will return kth smallest element in an array using bruteforce.
+// Time complexity O(nLogn)
 func GetKthSmallestElementUsingSort(input []int, k int) int {
 	if len(input) < k {
 		return -1
@@ -13,6 +15,8 @@ func GetKthSmallestElementUsingSort(input []int, k int) int {
 	return input[k-1]
 }
 
+// GetKthSmallestElementUsingMaxHeap ... will return kth smallest element in an array using max heap.
+// Time complexity O(k + (n-k)Logk)
 func GetKthSmallestElementUsingMaxHeap(input []int, k int) int {
 	if len(input) < k {
 		return -1
@@ -32,6 +36,8 @@ func GetKthSmallestElementUsingMaxHeap(input []int, k int) int {
 	return heap.Pop(&h).(int)
 }
 
+// GetKthSmallestElementUsingMinHeap ... will return kth smallest element in an array using min heap.
+// Time complexity O(n+ kLogn)
 func GetKthSmallestElementUsingMinHeap(input []int, k int) int {
 	if len(input) < k {
 		return -1
