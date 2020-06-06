@@ -4,7 +4,6 @@ import "testing"
 
 var benchmarkInputRainWater []int
 
-
 func TestGetWaterTrapped(t *testing.T) {
 	cases := []struct {
 		name           string
@@ -49,6 +48,11 @@ func TestGetWaterTrappedOptimized(t *testing.T) {
 			name:           "should give zero output",
 			input:          []int{1, 2},
 			expectedOutput: 0,
+		},
+		{
+			name:           "should give expected output with more elements",
+			input:          []int{1, 2, 3, 4, 5, 1, 2, 4, 2, 1, 4, 1},
+			expectedOutput: 10,
 		},
 	}
 	for _, c := range cases {
